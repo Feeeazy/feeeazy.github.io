@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Indicador Meteorológico</title>
+</head>
+<body>
+    <main class="flex">
+        <div class="cards flex">
+            <div class="card-temperature-now flex">
+                <div class="city flex">
+                    <span id="city"></span>
+                </div>
+                <div class="temp flex">
+                    <div class="temperature-infos flex">
+                        <div class="temperature flex">
+                            <span id="temperature"></span>
+                            <span class="graus">°C</span>
+                        </div>
+                        <div class="variation-temperature flex">
+                            <span id="max-temperature"></span>
+                            <span id="min-temperature"></span>
+                        </div>
+                </div>
+                </div>
+                <div class="cards-statistics flex">
+                    <div class="card-wind mini-card-info flex">
+                        <img src="assets/vento.png" alt="icon-vento">
+                        <div class="card-statistics-infos flex">
+                            <span>Vento</span>
+                            <span id="wind-speedy" class="strong"></span>
+                        </div>
+                    </div>
+                    <div class="card-humidity mini-card-info flex">
+                        <img src="assets/umidade.png" alt="icon-umidade">
+                        <div class="card-statistics-infos flex">
+                            <span>Umidade</span>
+                            <span id="humidity" class="strong"></span>
+                        </div>
+                    </div>
+                    <div class="card-rain mini-card-info flex">
+                        <img src="assets/chuva.png" alt="icon-chuva">
+                        <div class="card-statistics-infos flex">
+                            <span>Chuva</span>
+                            <span id="rain" class="strong"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="cards-informations flex">
+                <div class="card-informations-sun-time flex">
+                    <div class="title flex">
+                        <img src="assets/time.png" alt="">
+                        <span>Horário do sol</span>    
+                    </div>
+                    <div class="arco flex">
+                        <span id="time-now">a</span>
+                    </div>
+                    <div class="sun-informations flex">
+                        <span id="sunrise"></span>
+                        
+                        <span id="sunset"></span>
+                    </div>
+                </div>
+                <div class="card-forecast flex"></div>
+            </div>
+        </div>
+    </main>
+    <footer>
+    </footer>
+</body>
+    <script src="script.js"></script>
+</html>
