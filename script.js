@@ -227,57 +227,11 @@ function convertToTimestamp(timeString) {
   return timestamp;
 }
 
-// Função para calcular a diferença em minutos entre dois horários
-function calculateTimeDifference(timeString1, timeString2) {
-  var timestamp1 = convertToTimestamp(timeString1);
-  var timestamp2 = convertToTimestamp(timeString2);
+const horaAtual = 14;
 
-  var differenceInMinutes = Math.abs(timestamp1 - timestamp2) / (1000 * 60);
+// Calcule o ângulo de rotação do sol com base na hora atual (0-23).
+const angulo = ((horaAtual - 6) / 12) * 180; // -6 para ajustar o meio-dia ao topo do arco
 
-  return differenceInMinutes;
-}
-
-function calculateTimeDifferenceNow(timestamp1, timeString2) {
-
-  var timestamp2 = convertToTimestamp(timeString2)
-
-  var differenceInMinutes = Math.abs(timestamp1 - timestamp2) / (1000 * 60);
-
-  return 325;
-}
-
-function calculateSunPositionY(percentage) {
-  console.log("🚀 ~ file: script.js:250 ~ calculateSunPositionY ~ percentage:", percentage)
-  const minY = 72.5; // Ponto mínimo em pixels
-  const maxY = 134; // Ponto máximo em pixels
-  const range = maxY - minY; // Faixa total de variação
-  // const positionY = minY + (percentage * maxY / 100); // Cálculo da posição Y
-  const positionY = minY + (1 * range); // Cálculo da posição Y
-  console.log("🚀 ~ file: script.js:256 ~ calculateSunPositionY ~ positionY:", positionY)
-  return positionY;
-}
-
-let differenceTimeSun = calculateTimeDifference(sunrise, sunset)
-
-let differenceTimeNowToSunset = calculateTimeDifferenceNow(time, sunrise)
-
-let porcentageOfRange = (differenceTimeNowToSunset / differenceTimeSun) * 100
-
-
-// Ajuste a porcentagem para garantir que esteja dentro do intervalo de 0 a 100
-porcentageOfRange = Math.max(0, Math.min(100, porcentageOfRange));
-
-let sunElement = document.querySelector('.sun');
-let arcElement = document.querySelector('.arco');
-
-// Calcula a posição horizontal em pixels com base na porcentagem
-let positionX = (arcElement.offsetWidth * porcentageOfRange) / 100;
-
-// Calcula a posição vertical em pixels com base na porcentagem
-let positionY = ((arcElement.offsetHeight * (100 - porcentageOfRange)) / 100);
-let positionY2 = ((arcElement.offsetHeight * (100 - porcentageOfRange)) / 100);
-
-
-// Define a posição do sol no arco
-sunElement.style.left = positionX + 'px';
-sunElement.style.bottom = calculateSunPositionY(porcentageOfRange) + 'px';
+// Selecione o elemento do sol e aplique a rotação.
+const sol = document.querySelector('.sun');
+sol.style.transform = `rotate(${angulo}deg)`;

@@ -1,0 +1,36 @@
+body {
+    margin: 0;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #87CEEB; /* Cor de fundo azul claro */
+}
+
+.container {
+    position: relative;
+    width: 300px; /* Largura do container */
+    height: 150px; /* Altura do container */
+}
+
+.half-arc {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    border: 5px solid #FFD700; /* Cor da borda amarela */
+    border-radius: 150px 150px 0 0; /* Cria um arco */
+    border-bottom: none; /* Remove a borda inferior */
+}
+
+.sun {
+    position: absolute;
+    width: 30px; /* Largura do sol */
+    height: 30px; /* Altura do sol */
+    background-color: #FFD700; /* Cor do sol amarelo */
+    border-radius: 50%; /* Forma circular */
+    transform-origin: center bottom; /* Define o ponto de rotação no centro inferior do sol */
+}

@@ -154,29 +154,33 @@ main {
     margin-bottom: 8px;
 }
 
-.arco {
+.container-arco {
     position: relative;
-    width: 500px;
-    height: 200px;
-    border: 2px dashed #F6C833;
-    border-radius: 50% 50% 0 0;
-    border-bottom: none;
-    border-left: none;
-    border-right: none;
-    justify-content: center;
-    align-items: center;
-    margin-top: 16px;
+    width: 300px; /* Largura do container */
+    height: 150px; /* Altura do container */
+}
+
+.arco {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    border: 5px solid #FFD700; /* Cor da borda amarela */
+    border-radius: 150px 150px 0 0; /* Cria um arco */
+    border-bottom: none; /* Remove a borda inferior */
+
 }
 
 .sun {
     position: absolute;
-    bottom: 0;
-    width: 20px;
-    height: 20px;
-    background-color: #F6C833;
-    border-radius: 100%;
-    transform: translateX(-50%);
-    bottom: 72.5px;
+    width: 30px; /* Largura do sol */
+    height: 30px; /* Altura do sol */
+    background-color: #FFD700; /* Cor do sol amarelo */
+    border-radius: 50%; /* Forma circular */
+    transform: translateX(-50%); /* Para centralizar o sol horizontalmente */
+
 }
 
 .sun-informations {
@@ -193,3 +197,4 @@ main {
     top: -70px;
 
 }
+
